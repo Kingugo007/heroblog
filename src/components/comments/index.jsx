@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components"
 
 export const Comment = ({ path, post, getPost }) => {
@@ -13,8 +13,12 @@ const commentUrl = "https://ugheroblog.herokuapp.com/api/comments"
       const res = await axios.get(`${commentUrl}/?path=${path}`);
       setBlogComments(res.data);
        setName('')
-     setComment('')
+       setComment('')
     };
+
+useEffect(() => {
+  getComment()
+},[])
  
 const handleSubmit = async (e) => {
     e.preventDefault();

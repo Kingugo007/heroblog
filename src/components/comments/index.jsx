@@ -7,7 +7,7 @@ const [name, setName] = useState("")
 const [comment, setComment] = useState("")
 const [blogComments, setBlogComments] = useState([])
 
-const commentUrl = "http://localhost:5000/api/comments"
+const commentUrl = "https://ugheroblog.herokuapp.com/api/comments"
 
      const getComment = async () => {
       const res = await axios.get(`${commentUrl}/?path=${path}`);
